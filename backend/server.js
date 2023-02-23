@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 require('dotenv').config();
 
 const workoutRoutes = require('./routes/workouts')
+const userRoutes = require('./routes/user')
 
 // express app
 const app = express();
@@ -17,9 +18,10 @@ app.use((req, res, next) => {
 
 //routes
 app.use('/api/workouts', workoutRoutes)
+app.use('/api/user', userRoutes)
 
 
-// routes
+//routes
 app.get('/', (req, res) => {
     res.json({message: 'Welcome to workout app'})
 })
